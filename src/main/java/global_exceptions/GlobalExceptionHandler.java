@@ -4,6 +4,8 @@ import error_response.ErrorResponse;
 import error_response.ErrorResponseMultipleArgument;
 import exceptions.EmailAlreadyExistsException;
 import exceptions.UserNotFoundException;
+import jakarta.annotation.PostConstruct;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -14,7 +16,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestControllerAdvice
+@AutoConfiguration
 public class GlobalExceptionHandler {
+
+    @PostConstruct
+    public void loaded() {
+        System.out.println("Lib:"  +  "------- GlobalExceptionHandler loaded from library");
+    }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleGeneric(Exception ex) {

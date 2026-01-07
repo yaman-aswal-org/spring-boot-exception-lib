@@ -12,4 +12,8 @@ public class ErrorResponseMultipleArgument {
         this.errors = errors;
     }
 
+    public int getStatus() {
+        return status;
+    }
+
 }
