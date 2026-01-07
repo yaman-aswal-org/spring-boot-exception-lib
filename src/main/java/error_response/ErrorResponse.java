@@ -1,7 +1,5 @@
 package error_response;
 
-import java.util.Map;
-
 public class ErrorResponse {
 
     private final int status;
